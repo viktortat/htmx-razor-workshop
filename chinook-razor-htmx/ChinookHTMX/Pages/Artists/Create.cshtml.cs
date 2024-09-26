@@ -15,7 +15,6 @@ public class CreateModel(Data.ChinookContext context) : PageModel
         {
             return Partial("Artists/CreateModal", this);
         }
-
         return Page();
     }
 
@@ -26,7 +25,6 @@ public class CreateModel(Data.ChinookContext context) : PageModel
         {
             return Partial("Artists/CreateModal", Artist);
         }
-
         context.Artists.Add(Artist);
         await context.SaveChangesAsync();
         return Partial("_CreateSuccess", this);

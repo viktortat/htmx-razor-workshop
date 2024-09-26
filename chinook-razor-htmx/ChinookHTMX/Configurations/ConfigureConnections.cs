@@ -6,8 +6,7 @@ namespace ChinookHTMX.Configurations;
 
 public static class ConfigureConnections
 {
-    public static IServiceCollection AddConnectionProvider(this IServiceCollection services,
-        IConfiguration configuration)
+    public static IServiceCollection AddConnectionProvider(this IServiceCollection services, IConfiguration configuration)
     {
         var connection = String.Empty;
 
@@ -17,7 +16,6 @@ public static class ConfigureConnections
             connection = configuration.GetConnectionString("ChinookDbDocker");
 
         services.AddDbContextPool<ChinookContext>(options => options.UseSqlServer(connection));
-
         return services;
     }
 }
